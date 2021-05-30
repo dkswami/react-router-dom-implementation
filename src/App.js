@@ -18,6 +18,10 @@ const TopicsList = (props) => {
 	return (
 		<div>
 			<h1>TOPIC  LIST Page</h1>
+			<Link to={ `${props.match.url}/121`}>open 121 topic</Link><break/>
+			<Link to={ `${props.match.url}/144`}>open 144 topic</Link><break/>
+			<Link to={ `${props.match.url}/156`}>open 156 topic</Link>
+
 		</div>
 	);
 };
@@ -34,9 +38,11 @@ const TopicDetail = (props) => {
 function App() {
   return (
     <div>
-	    <Route  path='/' component={ HomePage } />
-	    <Route exact path='/topics' component={ TopicsList } />
-	    <Route  path='/topics/:topicId' component={ TopicDetail } />
+	    <Route  exact path='/' component={ HomePage } />
+	    <Route exact path='/oldblog/topics' component={ TopicsList } />
+	    <Route  path='/oldblog/topics/:topicId' component={ TopicDetail } />
+	    <Route exact path='/newblogs/topics' component={ TopicsList } />
+	    <Route  path='/newblogs/topics/:topicId' component={ TopicDetail } />
     </div>
   );
 }
